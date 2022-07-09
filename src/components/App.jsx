@@ -31,7 +31,7 @@ export class App extends React.Component {
   };
 
   render() {
-    const { good, neutral, bad } = this.title;
+    const { good, neutral, bad } = this.state;
 
     return (
       <Container>
