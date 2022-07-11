@@ -30,6 +30,10 @@ export class App extends React.Component {
     return Math.round((good * 100) / total);
   };
 
+  stateKeys = () => {
+    return Object.keys(this.state);
+  };
+
   render() {
     const { good, neutral, bad } = this.state;
 
@@ -37,7 +41,7 @@ export class App extends React.Component {
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={Object.keys(this.state)}
+            options={this.stateKeys}
             onBtnClick={this.onBtnClick}
           />
         </Section>
