@@ -13,6 +13,8 @@ export class App extends React.Component {
     bad: 0,
   };
 
+  stateKeys = Object.keys(this.state);
+
   onBtnClick = feedback => {
     this.setState(prevState => ({
       [feedback]: prevState[feedback] + 1,
@@ -28,10 +30,6 @@ export class App extends React.Component {
     const { good } = this.state;
     const total = this.countTotalFeedback();
     return Math.round((good * 100) / total);
-  };
-
-  stateKeys = () => {
-    return Object.keys(this.state);
   };
 
   render() {
